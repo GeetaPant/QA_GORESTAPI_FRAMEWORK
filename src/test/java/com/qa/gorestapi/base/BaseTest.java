@@ -8,7 +8,7 @@ import io.qameta.allure.restassured.AllureRestAssured;
 public class BaseTest {
 	
 	protected final static String BASE_URL= "https://gorest.co.in";
-	protected final static String GOREST_ENDPOINT = "/public/v2/users";
+	protected final static String GOREST_ENDPOINT = "/public/v2/users/";
 	
 	protected RestClient restClient;
 	

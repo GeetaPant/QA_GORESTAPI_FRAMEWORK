@@ -33,7 +33,7 @@ public class UserAPIWithDynamicJsonFile extends  BaseTest{
 			String updatedJsonString = mapper.writeValueAsString(usernode);
 			System.out.println("updated Json String ---"+usernode);
 			
-			Response response = restClient.post(BASE_URL, "/public/v2/users", updatedJsonString,null,null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
+			Response response = restClient.post(BASE_URL, GOREST_ENDPOINT, updatedJsonString,null,null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
 			Assert.assertEquals(response.statusCode(), 201);
 			} catch (IOException e) {
 			// TODO Auto-generated catch block

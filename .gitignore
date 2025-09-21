@@ -2,7 +2,7 @@ allure-results/
 build/
 reports/
 .mvn/
-test-output/
+test-output/g
 application.log
 ##############################
 ## Java

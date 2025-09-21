@@ -17,12 +17,12 @@ public class GetUserWithDeserializationTest extends BaseTest {
 	
 	@Test
 	public void getDeserilizedUserTest() {
-		Response response = restClient.get(BASE_URL,"/public/v2/users", null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
+		Response response = restClient.get(BASE_URL,GOREST_ENDPOINT, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
 		Assert.assertEquals(response.statusCode(), 200);
-		User[] use= JsonUtils.deserialize(response, User[].class);
+		User[] user= JsonUtils.deserialize(response, User[].class);
 		
-		System.out.println(Arrays.toString(use));
-		for(User u: use)
+		System.out.println(Arrays.toString(user));
+		for(User u: user)
 		{
 			System.out.println("ID is:  "+ u.getId());
 			System.out.println("User's Name :  "+ u.getName());

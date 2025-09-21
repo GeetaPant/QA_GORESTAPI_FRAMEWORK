@@ -23,23 +23,23 @@ public class DeleteUserTest extends BaseTest{
 				.status("active")
 				.build();
 		
-			Response responsePost = restClient.post(BASE_URL,"/public/v2/users",user, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
+			Response responsePost = restClient.post(BASE_URL,GOREST_ENDPOINT,user, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
 			Assert.assertEquals(responsePost.getStatusCode(), 201);
 			String id = responsePost.jsonPath().getString("id");
 			System.out.println("Created User ID is --"+ id);
 
 			// GET the created user
-			Response responseGet = restClient.get(BASE_URL,"/public/v2/users/"+id, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
+			Response responseGet = restClient.get(BASE_URL,GOREST_ENDPOINT+id, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
 			Assert.assertEquals(responseGet.getStatusCode(), 200);
 			Assert.assertEquals(responseGet.jsonPath().getString("id"), id);
 			Assert.assertEquals(responseGet.jsonPath().getString("name"), user.getName());
 			
 			//DELETE the created user
-			Response responseDelete = restClient.delete(BASE_URL,"/public/v2/users/"+id, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
+			Response responseDelete = restClient.delete(BASE_URL,GOREST_ENDPOINT+id, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
 			Assert.assertEquals(responseDelete.getStatusCode(), 204);
 			
 			//Recheck the delete user 
-			Response responseGetDeleted = restClient.get(BASE_URL,"/public/v2/users/"+id, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
+			Response responseGetDeleted = restClient.get(BASE_URL,GOREST_ENDPOINT+id, null, null, AuthTypes.BEARER_TOKEN, ContentType.JSON);
 			Assert.assertEquals(responseGetDeleted.getStatusCode(), 404);
 			Assert.assertEquals(responseGetDeleted.jsonPath().getString("message"), "Resource not found");
 	}

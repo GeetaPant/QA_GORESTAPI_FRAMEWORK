@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [REST API QA Regression Suite]" guice-stage="DEVELOPMENT" verbose="3">
+  <test thread-count="5" name="Create User Test(failed)" verbose="3">
+    <classes>
+      <class name="com.qa.gorestapi.tests.CreateUserTest">
+        <methods>
+          <include name="createUserWithJSONFile"/>
+          <include name="createUserWithBuilderTest"/>
+          <include name="setup"/>
+          <include name="createUserTest"/>
+        </methods>
+      </class> <!-- com.qa.gorestapi.tests.CreateUserTest -->
+    </classes>
+  </test> <!-- Create User Test(failed) -->
+  <test thread-count="5" name="GET User Test(failed)" verbose="3">
+    <classes>
+      <class name="com.qa.gorestapi.tests.GetUserTest">
+        <methods>
+          <include name="setup"/>
+          <include name="getAllUserTest"/>
+        </methods>
+      </class> <!-- com.qa.gorestapi.tests.GetUserTest -->
+    </classes>
+  </test> <!-- GET User Test(failed) -->
+  <test thread-count="5" name="Patch User Test(failed)" verbose="3">
+    <classes>
+      <class name="com.qa.gorestapi.tests.PartialUserUpdateTest">
+        <methods>
+          <include name="updateUserTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.qa.gorestapi.tests.PartialUserUpdateTest -->
+    </classes>
+  </test> <!-- Patch User Test(failed) -->
+  <test thread-count="5" name="DELETE User Test(failed)" verbose="3">
+    <classes>
+      <class name="com.qa.gorestapi.tests.DeleteUserTest">
+        <methods>
+          <include name="setup"/>
+          <include name="deleteUserTest"/>
+        </methods>
+      </class> <!-- com.qa.gorestapi.tests.DeleteUserTest -->
+    </classes>
+  </test> <!-- DELETE User Test(failed) -->
+</suite> <!-- Failed suite [REST API QA Regression Suite] -->
