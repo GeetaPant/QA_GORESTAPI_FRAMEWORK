@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name= "REST API QA Regression Suite" verbose="3">
+<suite name= "REST API QA Sanity Suite" verbose="3">
 <listeners>
 <listener class-name="com.qa.gorestapi.listeners.ExtentReportListener" />
 </listeners>
