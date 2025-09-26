@@ -35,7 +35,7 @@ pipeline
         
         
                 
-        stage('Regression Automation Test') {
+        stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/GeetaPant/QA_GORESTAPI_FRAMEWORK.git'
