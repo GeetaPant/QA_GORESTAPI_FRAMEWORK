@@ -16,5 +16,15 @@
 			<class name="com.qa.gorestapi.tests.GetUserTest" />
 		</classes>
 	</test>
+	 <test name="Patch User Test">
+		<classes>
+			<class name="com.qa.gorestapi.tests.PartialUserUpdateTest" />
+		</classes>
+		</test>
+		<test name="DELETE User Test">
+		<classes>
+			<class name="com.qa.gorestapi.tests.DeleteUserTest" />
+		</classes>
+	</test>
 </suite>
 
